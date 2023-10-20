@@ -19,7 +19,6 @@ class Email{
     }
 
     public function enviarConfirmacion(){
-
         //CREAR OBJETO DE EMAIL
         $mail = new PHPMailer();
         $mail->isSMTP();
@@ -40,7 +39,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola" . $this->nombre . ".</strong> Has credo una cuenta en AppSalon.</p>";
         $contenido .= "<p>Confirma tu cuenta, dando click en el enlace siguiente.</p>";
-        $contenido .= "<p>Da clic aqui!: <a href='". $_ENV['APP_URL'] ."/confirmar-cuenta?token=". $this->token ."'>CONFIRMAR CUENTA</a></p>";
+        $contenido .= "<p>Da clic aqui!: <a href='" . $_ENV['APP_URL'] . "/confirmar-cuenta?token=". $this->token ."'>CONFIRMAR CUENTA</a></p>";
         $contenido .= "<p>Si tu no realizaste ningun movimiento en AppSalon, puedes ignorar el mensaje.</p>";
         $contenido .= "</html>";
 
@@ -73,7 +72,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola" . $this->nombre . ".</strong> Has solicitado resetear tu password en AppSalon.</p>";
         $contenido .= "<p>Para crear una nueva password, da click en el enlace siguiente.</p>";
-        $contenido .= "<p>Da clic aqui!: <a href='". $_ENV['APP_URL'] ."/recuperar?token=". $this->token ."'>Reestablecer password</a></p>";
+        $contenido .= "<p>Da clic aqui!: <a href='" . $_ENV['APP_URL'] . "/recuperar?token=". $this->token ."'>Reestablecer password</a></p>";
         $contenido .= "<p>Si tu no realizaste ningun movimiento en AppSalon, puedes ignorar el mensaje.</p>";
         $contenido .= "</html>";
 
