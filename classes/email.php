@@ -26,7 +26,7 @@ class Email{
         $mail->SMTPAuth = true;
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASSWORD'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom('cuentas@Appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
@@ -39,7 +39,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola" . $this->nombre . ".</strong> Has credo una cuenta en AppSalon.</p>";
         $contenido .= "<p>Confirma tu cuenta, dando click en el enlace siguiente.</p>";
-        $contenido .= "<p>Da clic aqui!: <a href='" . $_ENV['APP_URL'] . "/confirmar-cuenta?token=". $this->token ."'>CONFIRMAR CUENTA</a></p>";
+        $contenido .= "<p>Da clic aqui!: <a href='". $_ENV['APP_URL'] ."/confirmar-cuenta?token=". $this->token ."'>CONFIRMAR CUENTA</a></p>";
         $contenido .= "<p>Si tu no realizaste ningun movimiento en AppSalon, puedes ignorar el mensaje.</p>";
         $contenido .= "</html>";
 
@@ -59,7 +59,7 @@ class Email{
         $mail->SMTPAuth = true;
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASSWORD'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom('cuentas@Appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
@@ -72,7 +72,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola" . $this->nombre . ".</strong> Has solicitado resetear tu password en AppSalon.</p>";
         $contenido .= "<p>Para crear una nueva password, da click en el enlace siguiente.</p>";
-        $contenido .= "<p>Da clic aqui!: <a href='" . $_ENV['APP_URL'] . "/recuperar?token=". $this->token ."'>Reestablecer password</a></p>";
+        $contenido .= "<p>Da clic aqui!: <a href='". $_ENV['APP_URL'] ."/recuperar?token=". $this->token ."'>Reestablecer password</a></p>";
         $contenido .= "<p>Si tu no realizaste ningun movimiento en AppSalon, puedes ignorar el mensaje.</p>";
         $contenido .= "</html>";
 
